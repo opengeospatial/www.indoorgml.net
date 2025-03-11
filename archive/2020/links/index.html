@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+
+    <!--
+	Ion by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<head>
+    <title>IndoorGML OGC</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src='/js/jquery.min.js'></script>
+    <script src='/js/skel.min.js'></script>
+    <script src='/js/skel-layers.min.js'></script>
+    <script>
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+
+			// Global.
+				global: {
+					range: '*',
+					href: '/css/style.css',
+					containers: 1400,
+					grid: {
+						gutters: {
+							vertical: '4em',
+							horizontal: 0
+						}
+					}
+				},
+
+			// XLarge.
+				xlarge: {
+					range: '-1680',
+					href: '/css/style-xlarge.css',
+					containers: 1200
+				},
+
+			// Large.
+				large: {
+					range: '-1280',
+					href: '/css/style-large.css',
+					containers: 960,
+					grid: {
+						gutters: {
+							vertical: '2.5em'
+						}
+					},
+					viewport: {
+						scalable: false
+					}
+				},
+
+			// Medium.
+				medium: {
+					range: '-980',
+					href: '/css/style-medium.css',
+					containers: '90%',
+					grid: {
+						collapse: 1
+					}
+				},
+
+			// Small.
+				small: {
+					range: '-820',
+					href: '/css/style-small.css',
+					containers: '90%',
+					grid: {
+						gutters: {
+							vertical: '1.25em'
+						}
+					}
+				},
+
+			// XSmall.
+				xsmall: {
+					range: '-560',
+					href: '/css/style-xsmall.css',
+					grid: {
+						collapse: 2
+					}
+				}
+
+		},
+		plugins: {
+			layers: {
+
+				// Config.
+					config: {
+						transform: true
+					},
+
+				// Navigation Panel.
+					navPanel: {
+						animation: 'pushX',
+						breakpoints: 'medium',
+						clickToHide: true,
+						height: '100%',
+						hidden: true,
+						html: '<div data-action="moveElement" data-args="nav"></div>',
+						orientation: 'vertical',
+						position: 'top-left',
+						side: 'left',
+						width: 250
+					},
+
+				// Navigation Button.
+					navButton: {
+						breakpoints: 'medium',
+						height: '4em',
+						html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
+						position: 'top-left',
+						side: 'top',
+						width: '6em'
+					}
+
+			}
+		}
+	});
+
+	$(function() {
+
+		// jQuery ready stuff.
+		// ===== Scroll to Top ====
+		// refered at https://codepen.io/rdallaire/pen/apoyx
+		$(window).scroll(function() {
+				if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+						$('#return-to-top').fadeIn(200);    // Fade in the arrow
+				} else {
+						$('#return-to-top').fadeOut(200);   // Else fade out the arrow
+				}
+		});
+		$('#return-to-top').click(function() {      // When arrow is clicked
+				$('body,html').animate({
+						scrollTop : 0                       // Scroll to top of body
+				}, 500);
+		});
+	});
+
+
+})(jQuery);
+</script>
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <noscript>
+        <link rel="stylesheet" href='/css/skel.css' />
+        <link rel="stylesheet" href='/css/style.css' />
+        <link rel="stylesheet" href='/css/style-xlarge.css' />
+    </noscript>
+</head>
+
+
+	<body id="top">
+
+        <!-- Header -->
+<header id="header" class="skel-layers-fixed">
+    <h1><a href="" class="site-title" >IndoorGML OGC</a></h1>
+    <nav id="nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/news">News</a></li>
+            <li><a href="/updates">Updates</a></li>
+            <li><a href="/resources">Resources</a></li>
+            <li><a href="/links">Links</a></li>
+            <li><a href="/contact">Contact</a></li>
+
+            <!--
+            <li><a href="/left-sidebar.html">Left Sidebar</a></li>
+            <li><a href="/right-sidebar.html">Right Sidebar</a></li>
+            <li><a href="/no-sidebar.html">No Sidebar</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            -->
+
+            <!--
+
+            
+                  
+            
+                  
+                    <li><a class="page-link" href="/contact/">Contact</a></li>
+                  
+            
+                  
+            
+                  
+            
+                  
+            
+                  
+                    <li><a class="page-link" href="/links/">Links</a></li>
+                  
+            
+                  
+                    <li><a class="page-link" href="/news/">News</a></li>
+                  
+            
+                  
+            
+                  
+                    <li><a class="page-link" href="/resources/">Resources</a></li>
+                  
+            
+                  
+            
+                  
+                    <li><a class="page-link" href="/updates/">Updates</a></li>
+                  
+            
+            <li><a href="#" class="button special">Sign Up</a></li>
+            -->
+        </ul>
+    </nav>
+</header>
+
+
+        <!-- Main -->
+<section id="main" class="wrapper style1">
+    <header class="major">
+        <h2>Links</h2>
+        
+    </header>
+    <div class="container">
+        <section>
+            <ul>
+  <li><a href="http://www.opengeospatial.org/standards/indoorgml">IndoorGML 1.0.3 OGC portal</a></li>
+  <li><a href="http://schemas.opengis.net/indoorGML/1.0">IndoorGML 1.0.3 schema</a></li>
+</ul>
+
+        </section>
+    </div>
+</section>
+
+
+        <a href="javascript:" id="return-to-top"><i class="fa fa-arrow-up"></i></a>
+
+        <!-- Footer -->
+<footer id="footer">
+    <div class="container">
+        <!--
+        <div class="row double">
+            <div class="6u">
+                <div class="row collapse-at-2">
+                    <div class="6u">
+                        <h3>Accumsan</h3>
+                        <ul class="alt">
+                            <li><a href="#">Nascetur nunc varius</a></li>
+                            <li><a href="#">Vis faucibus sed tempor</a></li>
+                            <li><a href="#">Massa amet lobortis vel</a></li>
+                            <li><a href="#">Nascetur nunc varius</a></li>
+                        </ul>
+                    </div>
+                    <div class="6u">
+                        <h3>Faucibus</h3>
+                        <ul class="alt">
+                            <li><a href="#">Nascetur nunc varius</a></li>
+                            <li><a href="#">Vis faucibus sed tempor</a></li>
+                            <li><a href="#">Massa amet lobortis vel</a></li>
+                            <li><a href="#">Nascetur nunc varius</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="6u">
+                <h2>Aliquam Interdum</h2>
+                <p>Blandit nunc tempor lobortis nunc non. Mi accumsan. Justo aliquet massa adipiscing cubilia eu accumsan id. Arcu accumsan faucibus vis ultricies adipiscing ornare ut. Mi accumsan justo aliquet.</p>
+                <ul class="icons">
+                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+                </ul>
+            </div>
+        </div>
+        -->
+        <ul class="copyright">
+            <li>&copy; IndoorGML SWG. All rights reserved.</li>
+            <li>Maintained by the <a href="http://stem.pusan.ac.kr/web/">STEMLab at Pusan Natioanl Univeristy</a> - Last update on Jan. 14, 2019</li>
+            <li>Jekyll Template: <a href="https://github.com/old-jekyll-templates/Ion-Jekyll-Theme"> Ion Jekyll Theme</a></li>
+        </ul>
+    </div>
+</footer>
+
+        
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44083082-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+    </body>
+
+</html>

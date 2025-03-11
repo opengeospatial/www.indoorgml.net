@@ -1,0 +1,266 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin: 0px;
+	font-family: "arial";
+	background-color: #ffffff;
+	font-size: 16px;
+	}
+#wrap{
+	width:100%;
+		}
+div.clear{
+	clear:both;
+		}
+a{
+	outline:none;
+		}
+img{
+	border: none;
+	float: none;
+	}
+#contentwrap{
+	width:860px;
+	background-color:#FFFFFF;
+	margin-left:auto;
+	margin-right:auto;
+	padding:20px;
+	margin-top:20px;
+	margin-bottom:20px;
+	}
+#topcontain {
+	width:860px;
+	height:70px;
+	padding-bottom:20px;
+	border-bottom:1px dotted #CCCCCC;
+	margin-bottom:20px;
+	}
+#topcontainleft {
+	width:260px;
+	height:80px;
+	float:left;
+	}
+#topcontainright {
+	width: 600px;
+	height: 20px;
+	float: right;
+	font-size: 18px;
+	}
+#topcontainrighttop {
+	width: 600px;
+	height: 20px;
+	padding-top: 20px;
+	font-size: 16px;
+	}
+#topcontainrighttop p{
+	font-size: 18px;
+	color: #000;
+	margin: 0px;
+	padding: 0px;
+	text-align: right;
+	}
+#topcontainrightbot {
+	width: 600px;
+	height: 16px;
+	padding-top: 24px;
+	font-size: 16px;
+	color: #000;
+	}
+#topcontainrightbot p{
+	font-size: 14px;
+	color: #000;
+	margin: 0px;
+	padding: 0px;
+	text-align: right;
+	word-spacing: 20px;
+	font-weight: bold;
+	}
+#topcontainright a{
+	color:#0066ff;
+	text-decoration:none;
+	}
+#topcontainright a:hover{
+	color: #0066ff;
+	text-decoration: underline;
+	font-size: 16px;
+	}
+#imagecontain {
+	width: 860px;
+	height: auto;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px dotted #CCCCCC;
+	float: right;
+	padding-top: 0px;
+	}
+#bodycontain {
+	width:860px;
+	margin-bottom:20px;
+	}
+#bodycontainleft {
+	width: 860px;
+	margin-right: 0px;
+	float: left;
+	}
+#bodycontainleft h1{
+	font-size: 22px;
+	line-height: 30px;
+	color: #000000;
+	margin: 0 0 20px 0;
+	padding: 0px;
+	font-weight: normal;
+	}
+#bodycontainleft h2{
+	font-size:22px;
+	line-height:30px;
+	color:#666666;
+	padding:0px;
+	margin:0 0 20px 0;
+	font-weight:normal;
+	}
+#bodycontainleft h3{
+	font-size: 18px;
+	line-height: 20px;
+	color: #000000;
+	padding: 0px;
+	margin: 0 0 20px 0;
+	font-weight: normal;
+	}
+#bodycontainleft p{
+	font-size: 16px;
+	color: #000000;
+	font-style: normal;
+	font-weight: normal;
+	margin: 0 0 20px 0;
+	line-height: 22px;
+	}
+#bodycontainleft ul{
+	font-size: 16px;
+	color: #000000;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 22px;
+	margin-bottom: 20px;
+	}
+#bodycontainleft li{
+	font-size: 16px;
+	color: #000000;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 22px;
+	}
+#bodycontainleft a{
+	color:#0066ff;
+	text-decoration:none;
+	}
+#bodycontainleft a:hover{
+	color:#0066ff;
+	text-decoration:underline;
+		}
+blockquote {
+	padding:20px 20px 25px 20px;
+	border-left:5px solid #0066FF;
+	font-size:16px;
+	color:#666666;
+	font-style:normal;
+	font-weight:normal;
+	background-color:#ededed;
+	margin:20px 0 20px 0;
+	line-height:25px;
+	}
+#bodycontainright {
+	width:250px;
+	float:right;
+	}
+#bodycontainright h4{
+	font-size:22px;
+	line-height:30px;
+	color:#666666;
+	padding:0px;
+	margin:0 0 10px 0;
+	font-weight:normal;
+	}
+#bodycontainright h5{
+	font-size:22px;
+	line-height:30px;
+	color:#666666;
+	padding:0px;
+	margin:25px 0 10px 0;
+	font-weight:normal;
+	}
+#bodycontainright ul{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	font-size:14px;
+	color:#666;
+	}
+#bodycontainright li{
+	border-bottom:1px dotted #CCCCCC;
+	padding:4px 0px;
+	margin:0px;
+	}
+#bodycontainright p{
+	font-size:14px;
+	color:#666666;
+	font-style:normal;
+	font-weight:normal;
+	margin:0 0 20px 0;
+	line-height:22px;
+	}
+#bodycontainright a{
+	color:#0066ff;
+	text-decoration:none;
+	}
+#bodycontainright a:hover{
+	color:#0066ff;
+	text-decoration:underline;
+	}
+#footer {
+	width:860px;
+	border-top:1px dotted #CCCCCC;
+	padding-top:10px;
+	}
+#footerleft {
+	width:460px;
+	float:left;
+	}
+#footerright {
+	width:400px;
+	float:right;
+	}
+#footerleft p{
+	font-size:11px;
+	color:#666666;
+	font-style:normal;
+	font-weight:normal;
+	margin:0;
+	padding:0px;
+	line-height:20px;
+	}
+#footerright p{
+	font-size:11px;
+	color:#666666;
+	font-style:normal;
+	font-weight:normal;
+	margin:0;
+	padding:0px;
+	line-height:20px;
+	text-align:right;
+	}
+#footerleft a{
+	color:#0066ff;
+	text-decoration:none;
+	}
+#footerleft a:hover{
+	color:#0066ff;
+	text-decoration:underline;
+	}
+#footerright a{
+	color:#666666;
+	text-decoration:none;
+	}
+#footerright a:hover{
+	color:#0066ff;
+	text-decoration:underline;
+	}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+	xmlns="http://indoorgml.net/extensions/textureext"
+	targetNamespace="http://indoorgml.net/extensions/textureext"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:indoorgmlcore="http://www.opengis.net/indoorgml/1.0/core"
+	elementFormDefault="qualified"
+	version="1.0.3">
+	<xs:annotation>
+		<xs:documentation>
+			Extension from IndoorGML 1.0.3 to support texture projection on cell space boundary 2019-03-04 by Ki-Joune Li
+			The cell space boundary should match with texture surface exactly.
+		</xs:documentation>
+	</xs:annotation>
+	<!-- ====================================================================== -->
+	<xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+		<xs:import namespace="http://www.opengis.net/indoorgml/1.0/core" schemaLocation="http://schemas.opengis.net/indoorgml/1.0/indoorgmlcore.xsd"/>
+	<!-- ====================================================================== -->
+	<xs:element name="TextureSurface" type="TextureSurfaceType" substitutionGroup="indoorgmlcore:CellSpaceBoundary">
+		<xs:annotation>
+			<xs:documentation>
+				CellSpaceStorey contains storey data as an attribute
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- ====================================================================== -->
+	<xs:complexType name="TextureSurfaceType">
+		<xs:complexContent>
+			<xs:extension base="indoorgmlcore:CellSpaceBoundaryType">
+				<xs:sequence>
+					<xs:element name="TextureCoordinate" type="gml:LinearRingType"/>
+					<xs:element name="TextureImage" type="xs:anyURI"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

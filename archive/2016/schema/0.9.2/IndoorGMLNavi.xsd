@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="indoornavi" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:indoorCore="indoorCore" targetNamespace="indoornavi" elementFormDefault="unqualified">
+    <xs:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
+    <xs:import namespace="indoorCore" schemaLocation="IndoorGMLCore.xsd"/>
+    <!-- ==================================================================== -->
+    <xs:element name="Route" type="RouteType" substitutionGroup="gml:AbstractFeature">
+        <xs:annotation>
+            <xs:documentation>Route..
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- ==================================================================== -->
+    <xs:complexType name="RouteType">
+        <xs:complexContent>
+            <xs:extension base="gml:AbstractFeatureType">
+                <xs:sequence>
+                    <xs:element name="startRouteNode" type="RouteNodePropertyType" minOccurs="1"/>
+                    <xs:element name="endRouteNode" type="RouteNodePropertyType" minOccurs="1"/>
+                    <xs:element name="path" type="PathType" minOccurs="1"/>
+                </xs:sequence>
+                <xs:attributeGroup ref="gml:AggregationAttributeGroup"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:complexType name="PathType">
+        <xs:complexContent>
+            <xs:extension base="gml:AbstractFeatureType">
+                <xs:sequence>
+                    <xs:element name="routeMember" type="RouteMemberType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attributeGroup ref="gml:AggregationAttributeGroup"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="RouteMemberType">
+        <xs:complexContent>
+            <xs:extension base="gml:AbstractFeatureMemberType">
+                <xs:sequence>
+                    <xs:element ref="RouteSegment" minOccurs="1"/>
+                </xs:sequence>
+                <xs:attributeGroup ref="gml:AggregationAttributeGroup"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:element name="RouteSegment" type="RouteSegmentType">
+        <xs:annotation>
+            <xs:documentation>RouteSegment
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- ==================================================================== -->
+    <xs:complexType name="RouteSegmentType">
+        <xs:complexContent>
+            <xs:extension base="indoorCore:TransitionType">
+                <xs:sequence>
+                    <xs:element name="from" type="RouteNodePropertyType"/>
+                    <xs:element name="to" type="RouteNodePropertyType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:complexType name="RouteSegmentMemberType">
+        <xs:complexContent>
+            <xs:extension base="gml:AbstractFeatureMemberType">
+                <xs:sequence minOccurs="0">
+                    <xs:element ref="RouteSegment"/>
+                </xs:sequence>
+                <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:element name="RouteNode" type="RouteNodeType">
+        <xs:annotation>
+            <xs:documentation>Route Node
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- ==================================================================== -->
+    <xs:complexType name="RouteNodeType">
+        <xs:complexContent>
+            <xs:extension base="indoorCore:StateType">
+                <xs:sequence>
+                    <xs:element name="class" type="gml:CodeType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:complexType name="RouteNodePropertyType">
+        <xs:sequence minOccurs="1">
+            <xs:element ref="RouteNode"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:complexType name="RouteNodeMemberType">
+        <xs:complexContent>
+            <xs:extension base="gml:AbstractFeatureMemberType">
+                <xs:sequence minOccurs="1">
+                    <xs:element ref="RouteNode"/>
+                </xs:sequence>
+                <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:element name="NavigableBoundary" type="NavigableBoundaryType" substitutionGroup="indoorCore:CellSpaceBoundary">
+        <xs:annotation>
+            <xs:documentation> NavigableBoundary </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- ==================================================================== -->
+    <xs:complexType name="NavigableBoundaryType">
+        <xs:complexContent>
+            <xs:extension base="indoorCore:CellSpaceBoundaryType">
+                <xs:sequence>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:element name="TransferBoundary" type="TransferBoundaryType" substitutionGroup="NavigableBoundary">
+        <xs:annotation>
+            <xs:documentation> TransferBoundary </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- ==================================================================== -->
+    <xs:complexType name="TransferBoundaryType">
+        <xs:complexContent>
+            <xs:extension base="NavigableBoundaryType">
+                <xs:sequence>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    
+    <xs:element name="ConnectionBoundary" type="ConnectionBoundaryType" substitutionGroup="TransferBoundary">
+        <xs:annotation>
+            <xs:documentation> ConnectionBoundary </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- ==================================================================== -->
+    <xs:complexType name="ConnectionBoundaryType">
+        <xs:complexContent>
+            <xs:extension base="TransferBoundaryType">
+                <xs:sequence>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:element name="AnchorBoundary" type="AnchorBoundaryType" substitutionGroup="TransferBoundary">
+        <xs:annotation>
+            <xs:documentation> AnchorBoundary </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- ==================================================================== -->
+    <xs:complexType name="AnchorBoundaryType">
+        <xs:complexContent>
+            <xs:extension base="TransferBoundaryType">
+                <xs:sequence>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:element name="NavigableSpace" type="NavigableSpaceType" substitutionGroup="indoorCore:CellSpace">
+        <xs:annotation>
+            <xs:documentation>NavigableSpace
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- ==================================================================== -->
+    <xs:complexType name="NavigableSpaceType">
+        <xs:complexContent>
+            <xs:extension base="indoorCore:CellSpaceType">
+                <xs:sequence>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:complexType name="NavigableSpaceMemberType">
+        <xs:complexContent>
+            <xs:extension base="gml:AbstractFeatureMemberType">
+                <xs:sequence minOccurs="0">
+                    <xs:element ref="NavigableSpace"/>
+                </xs:sequence>
+                <xs:attributeGroup ref="gml:AssociationAttributeGroup"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:element name="GeneralSpace" type="GeneralSpaceType" substitutionGroup="NavigableSpace">
+        <xs:annotation>
+            <xs:documentation>Denotin the interspace connections between the SpaceLayer
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- ==================================================================== -->
+    <xs:complexType name="GeneralSpaceType">
+        <xs:complexContent>
+            <xs:extension base="NavigableSpaceType">
+                <xs:sequence>
+                    <xs:element name="class" type="gml:CodeType"/>
+                    <xs:element name="function" type="gml:CodeType"/>
+                    <xs:element name="usage" type="gml:CodeType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:element name="TransferSpace" type="TransferSpaceType" substitutionGroup="NavigableSpace">
+        <xs:annotation>
+            <xs:documentation>Denotin the interspace connections between the SpaceLayer
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- ==================================================================== -->
+    <xs:complexType name="TransferSpaceType">
+        <xs:complexContent>
+            <xs:extension base="NavigableSpaceType">
+                <xs:sequence>
+                    <xs:element name="class" type="gml:CodeType"/>
+                    <xs:element name="function" type="gml:CodeType"/>
+                    <xs:element name="usage" type="gml:CodeType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:element name="AnchorSpace" type="AnchorSpaceType" substitutionGroup="TransferSpace">
+        <xs:annotation>
+            <xs:documentation>Denotin the interspace connections between the SpaceLayer
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- ==================================================================== -->
+    <xs:complexType name="AnchorSpaceType">
+        <xs:complexContent>
+            <xs:extension base="TransferSpaceType">
+                <xs:sequence/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:element name="ConnectionSpace" type="ConnectionSpaceType" substitutionGroup="TransferSpace">
+        <xs:annotation>
+            <xs:documentation>Denotin the interspace connections between the SpaceLayer
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- ==================================================================== -->
+    <xs:complexType name="ConnectionSpaceType">
+        <xs:complexContent>
+            <xs:extension base="TransferSpaceType">
+                <xs:sequence/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <!-- ==================================================================== -->
+    <xs:element name="TransitionSpace" type="TransitionSpaceType" substitutionGroup="TransferSpace">
+        <xs:annotation>
+            <xs:documentation>Denotin the interspace connections between the SpaceLayer
+            </xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <!-- ==================================================================== -->
+    <xs:complexType name="TransitionSpaceType">
+        <xs:complexContent>
+            <xs:extension base="TransferSpaceType">
+                <xs:sequence/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>
